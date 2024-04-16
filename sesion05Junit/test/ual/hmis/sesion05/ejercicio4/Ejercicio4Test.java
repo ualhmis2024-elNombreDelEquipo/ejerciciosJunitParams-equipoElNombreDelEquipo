@@ -23,30 +23,28 @@ class Ejercicio4Test {
 		if (input1 != null) {
 			temp = input1.split(";");
 			System.out.println(temp);
-			if (temp != null) {
-				for (String string : temp) {
-					lista1.add(string);
-				}
+
+			for (String string : temp) {
+				lista1.add(string);
+
 			}
 		}
 
 		if (input2 != null) {
 			temp = input2.split(";");
 
-			if (temp != null) {
-				for (String string : temp) {
-					lista2.add(string);
-				}
+			for (String string : temp) {
+				lista2.add(string);
+
 			}
 		}
 
 		if (output != null) {
 			temp = output.split(";");
 
-			if (temp != null) {
-				for (String string : temp) {
-					result.add(string);
-				}
+			for (String string : temp) {
+				result.add(string);
+
 			}
 		}
 
