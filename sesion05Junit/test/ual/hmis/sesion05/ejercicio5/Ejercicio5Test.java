@@ -41,4 +41,31 @@ public class Ejercicio5Test {
 		Assert.assertEquals(solucion, result);
 
 	}
+	
+	
+	@ParameterizedTest
+	@CsvFileSource(files = "test/ual/hmis/sesion05/ejercicio5/archivoEj5OrdenAlfabetico.csv")
+	void TestEjercicio5OrdenOcurrencia(String input, String output) {
+
+		Ejercicio5 ejPrueba = new Ejercicio5();
+
+		String[] temp;
+
+		ArrayList<String> result = new ArrayList<>();
+
+		if (output != null) {
+			temp = output.split(";");
+
+			for (String string : temp) {
+				result.add(string);
+
+			}
+		}
+
+		ArrayList<Pair<String, Integer>> solucion = ejPrueba.ordenOcurrencia(directorioEntrada + input);
+
+		Assert.assertEquals(solucion, result);
+
+	}
+	
 }
