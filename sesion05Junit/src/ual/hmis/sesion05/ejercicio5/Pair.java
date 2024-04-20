@@ -36,8 +36,7 @@ public class Pair<K, V> {
             return false;
         }
         Pair<?, ?> pair = (Pair<?, ?>) obj;
-        return Objects.equals(key, pair.key) &&
-               Objects.equals(value, pair.value);
+        return Objects.equals(key, pair.key);
     }
 
     @Override

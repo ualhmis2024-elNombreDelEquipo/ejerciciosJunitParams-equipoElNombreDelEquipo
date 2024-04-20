@@ -51,21 +51,21 @@ public class Ejercicio5 {
 
 		for (String palabra : temp) {
 			Pair<String, Integer> patata = new Pair<>(palabra, 1);
-			if (!result.contains(patata))
-				result.add(patata);
-			else {
-				int posicion = result.indexOf(palabra);
+			int posicion = result.indexOf(patata);
+			if (posicion != -1) {
 				result.get(posicion).setValue(result.get(posicion).getValue() + 1);
+			} else {
+				result.add(patata);
 			}
 		}
-
+		
 		Collections.sort(result, new Comparator<Pair<String, Integer>>() {
 			@Override
 			public int compare(Pair<String, Integer> p1, Pair<String, Integer> p2) {
-				return Integer.compare(p1.getValue(), p2.getValue());
+				return Integer.compare(p2.getValue(), p1.getValue());
 			}
 		});
-
+	
 		return result;
 	}
 
