@@ -17,7 +17,7 @@ public class Ejercicio5 {
 			scan = new Scanner(new File(filename));
 		} catch (Exception e) {
 			System.out.println("Error al cargar el archivo --> " + e.getMessage());
-			System.exit(-1);
+			return null;
 		}
 
 		line = scan.nextLine();
@@ -42,7 +42,7 @@ public class Ejercicio5 {
 			scan = new Scanner(new File(filename));
 		} catch (Exception e) {
 			System.out.println("Error al cargar el archivo --> " + e.getMessage());
-			System.exit(-1);
+			return null;
 		}
 
 		line = scan.nextLine();

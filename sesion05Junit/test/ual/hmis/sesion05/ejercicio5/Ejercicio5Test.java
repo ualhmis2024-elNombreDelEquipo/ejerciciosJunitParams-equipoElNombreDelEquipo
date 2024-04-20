@@ -40,7 +40,11 @@ public class Ejercicio5Test {
 
 			}
 		}
-
+		
+		if(output==null) {
+			result = null;
+		}
+		
 		ArrayList<String> solucion = ejPrueba.ordenAlfabetico(directorioEntrada + input);
 
 		Assert.assertEquals(solucion, result);
@@ -69,10 +73,47 @@ public class Ejercicio5Test {
 			}
 		}
 
+		if(output==null) {
+			result = null;
+		}
+		
 		ArrayList<Pair<String, Integer>> solucion = ejPrueba.ordenOcurrencia(directorioEntrada + input);
 		
 		Assert.assertEquals(solucion, result);
 
 	}
 	
+	@ParameterizedTest
+	@CsvFileSource(files = "test/ual/hmis/sesion05/ejercicio5/archivoEj5Pair.csv")
+	void TestEjercicio5PairEqualsObject(String input1, String input2, String output) {
+		
+		Pair<String,String> par = new Pair<>(input1,input2);
+		Object prueba = new Object();
+		
+		prueba = par;
+		
+		Assert.assertTrue(par.equals(prueba));
+	}
+	
+	@ParameterizedTest
+	@CsvFileSource(files = "test/ual/hmis/sesion05/ejercicio5/archivoEj5Pair.csv")
+	void TestEjercicio5PairEqualsNullObject(String input1, String input2, String output) {
+		
+		Pair<String,String> par = new Pair<>(input1,input2);
+		Object prueba = null;
+		String a = " ";
+		
+		Assert.assertFalse(par.equals(prueba));
+		Assert.assertFalse(par.equals(a));
+	}
+	
+	@ParameterizedTest
+	@CsvFileSource(files = "test/ual/hmis/sesion05/ejercicio5/archivoEj5Pair.csv")
+	void TestEjercicio5PairEqualsOtroObjeto(String input1, String input2, String output) {
+		
+		Pair<String,String> par = new Pair<>(input1,input2);
+		String prueba = " ";
+		
+		Assert.assertFalse(par.equals(prueba));
+	}
 }
