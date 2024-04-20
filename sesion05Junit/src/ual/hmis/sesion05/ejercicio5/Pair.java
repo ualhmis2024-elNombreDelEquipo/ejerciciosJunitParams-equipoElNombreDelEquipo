@@ -11,14 +11,6 @@ public class Pair<K, V> {
         this.value = value;
     }
 
-    public K getKey() {
-        return key;
-    }
-
-    public void setKey(K key) {
-        this.key = key;
-    }
-
     public V getValue() {
         return value;
     }
@@ -37,15 +29,5 @@ public class Pair<K, V> {
         }
         Pair<?, ?> pair = (Pair<?, ?>) obj;
         return Objects.equals(key, pair.key);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(key, value);
-    }
-
-    @Override
-    public String toString() {
-        return "(" + key + ", " + value + ")";
     }
 }
