@@ -2,6 +2,8 @@ package ual.hmis.sesion05.ejercicio5;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 import org.junit.Assert;
 import org.junit.jupiter.api.Assertions;
@@ -16,6 +18,9 @@ public class Ejercicio5Test {
 	private static String directorioEntrada = System.getProperty("user.dir") + File.separator + "src" + File.separator
 			+ "ual" + File.separator + "hmis" + File.separator + "sesion05" + File.separator + "ejercicio5"
 			+ File.separator;
+	
+	
+	
 
 	@ParameterizedTest
 	@CsvFileSource(files = "test/ual/hmis/sesion05/ejercicio5/archivoEj5OrdenAlfabetico.csv")
@@ -61,12 +66,11 @@ public class Ejercicio5Test {
 				temp1 = string.split("-");
 				Pair<String, Integer> par = new Pair<String, Integer>(temp1[0], Integer.parseInt(temp1[1]));
 				result.add(par);
-
 			}
 		}
 
 		ArrayList<Pair<String, Integer>> solucion = ejPrueba.ordenOcurrencia(directorioEntrada + input);
-
+		
 		Assert.assertEquals(solucion, result);
 
 	}
