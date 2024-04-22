@@ -1,7 +1,7 @@
 package ual.hmis.sesion05.ejercicio3;
 
 public class Ejercicio3 {
-	static String resultado = null;
+	static String resultado = "";
 
 	public String enmascararPassword(String password) {
 		int length = password.length();
